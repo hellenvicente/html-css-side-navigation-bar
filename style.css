@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Estilo da Barra Lateral */
+#sidebar {
+  position: fixed;
+  width: 270px;
+  height: 100%;
+  left: -270px; /* Começa escondida fora da tela */
+  background: #1b1b1b;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* Quando o checkbox estiver marcado, move a barra para a tela */
+#btn:checked ~ #sidebar {
+  left: 0;
+}
+
+#sidebar .title {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #111;
+  letter-spacing: 1px;
+}
+
+#sidebar .list-items {
+  width: 100%;
+  list-style: none;
+}
+
+#sidebar .list-items li {
+  line-height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#sidebar .list-items li:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#sidebar .list-items li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 40px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+#sidebar .list-items li a:hover {
+  background: #fff;
+  color: #1b1b1b;
+}
+
+#sidebar .list-items li a i {
+  margin-right: 20px;
+}
+
+/* Redes Sociais */
+#sidebar .icons {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#sidebar .icons a {
+  color: #f2f2f2;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+#sidebar .icons a:hover {
+  color: #4070f4;
+}
+
+/* Botão de abrir/fechar (Menu Hamburger) */
+.menu-btn {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  background: #1b1b1b;
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  z-index: 1000;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Move o botão junto com o menu quando aberto */
+#btn:checked ~ .menu-btn {
+  left: 285px;
+}
+
+/* Troca o ícone de barras para "X" quando aberto */
+#btn:checked ~ .menu-btn i::before {
+  content: "\f00d"; /* Código Font Awesome para o ícone 'times' (X) */
+}
+
+/* Estilo do conteúdo da página */
+.content {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.content .header {
+  font-size: 45px;
+  font-weight: 700;
+}
